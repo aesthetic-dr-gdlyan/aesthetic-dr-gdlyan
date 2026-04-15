@@ -3,270 +3,353 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Aesthetic Clinic</title>
+<title>Quartz Beauty Clinic</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* =====================
-   GLOBAL STYLES
-===================== */
+
+/* ===== RESET ===== */
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-    background-color: #fdf8f5;
-    color: #2c2c2c;
+    font-family:'Raleway', sans-serif;
+    background:#f6f3f1;
+    color:#2d2d2d;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-}
-
+/* ===== GLOBAL ===== */
 .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
+    width:90%;
+    max-width:1100px;
+    margin:auto;
 }
 
-/* =====================
-   HERO SECTION
-===================== */
+h1,h2,h3 {
+    font-family:'Playfair Display', serif;
+}
+
+/* ===== NAV ===== */
+.nav {
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:10;
+    padding:20px 0;
+    color:white;
+}
+
+.nav .container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nav a {
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.btn-nav {
+    border:1px solid rgba(255,255,255,0.6);
+    padding:6px 14px;
+    border-radius:20px;
+}
+
+/* ===== HERO ===== */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('https://images.unsplash.com/photo-1588776814546-ec7e5cba4f8f');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
+    height:90vh;
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.1)),
+    url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content {
+    color:white;
+    max-width:500px;
+}
+
+.hero small {
+    letter-spacing:2px;
+    opacity:0.7;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size:46px;
+    margin:15px 0;
 }
 
 .hero p {
-    margin: 20px 0;
-    font-size: 18px;
+    font-size:14px;
+    margin-bottom:20px;
 }
 
 .btn {
-    background: #d4a373;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
+    background:#d4a373;
+    padding:12px 28px;
+    border-radius:25px;
+    color:white;
+    text-decoration:none;
 }
 
-.btn:hover {
-    background: #b5835a;
-}
-
-/* =====================
-   ABOUT SECTION
-===================== */
+/* ===== ABOUT ===== */
 .about {
-    padding: 60px 0;
-    text-align: center;
+    padding:80px 0;
 }
 
-.about p {
-    max-width: 700px;
-    margin: 20px auto;
+.about-wrapper {
+    display:flex;
+    gap:40px;
+    align-items:center;
 }
 
-/* =====================
-   SERVICES SECTION
-===================== */
+.about-img {
+    position:relative;
+    width:50%;
+}
+
+.about-img img {
+    width:100%;
+    border-radius:10px;
+}
+
+.decor {
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#b08968;
+    bottom:-20px;
+    left:-20px;
+    z-index:-1;
+}
+
+.about-text {
+    width:50%;
+}
+
+.about-text h2 {
+    margin-bottom:15px;
+}
+
+/* ===== SERVICES ===== */
 .services {
-    padding: 60px 0;
+    padding:80px 0;
+    text-align:center;
 }
 
 .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-top:40px;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: 0.3s;
+.service {
+    text-align:center;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.service img {
+    width:100%;
+    border-radius:10px;
 }
 
-/* =====================
-   WHY CHOOSE US
-===================== */
-.why {
-    padding: 60px 0;
-    background: #fff;
+.service h3 {
+    margin-top:10px;
+    font-size:16px;
 }
 
-.why-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.service span {
+    font-size:12px;
+    opacity:0.6;
 }
 
-.why-item {
-    padding: 20px;
-    border-left: 3px solid #d4a373;
+/* ===== TEAM ===== */
+.team {
+    margin-top:60px;
+    padding:80px 0;
+    background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('https://images.unsplash.com/photo-1596462502278-27bfdc403348');
+    background-size:cover;
+    color:white;
+    text-align:center;
 }
 
-/* =====================
-   BEFORE AFTER
-===================== */
-.before-after {
-    padding: 60px 0;
-    text-align: center;
+.team-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:40px;
 }
 
-.before-after img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.member {
+    background:rgba(255,255,255,0.9);
+    color:#2d2d2d;
+    padding:15px;
+    border-radius:10px;
 }
 
-/* =====================
-   CONTACT SECTION
-===================== */
+.member img {
+    width:100%;
+    border-radius:10px;
+}
+
+.member h4 {
+    margin-top:10px;
+}
+
+/* ===== FOOTER / CONTACT ===== */
 .contact {
-    padding: 60px 0;
-    background: #2c2c2c;
-    color: white;
+    padding:60px 0;
+    text-align:center;
 }
 
-.contact form {
-    display: grid;
-    gap: 15px;
-    max-width: 500px;
-    margin: auto;
+.contact p {
+    margin:10px 0;
 }
 
-input, textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+.about-wrapper {
+    flex-direction:column;
 }
 
-button {
-    background: #d4a373;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 25px;
-    cursor: pointer;
+.about-img, .about-text {
+    width:100%;
 }
 
-button:hover {
-    background: #b5835a;
+.hero h1 {
+    font-size:32px;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 32px;
-    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- =====================
-     HERO SECTION
-===================== -->
+<!-- NAV -->
+<div class="nav">
+    <div class="container">
+        <div>QUARTZ</div>
+        <div>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SERVICES</a>
+            <a href="#">CONTACT</a>
+            <a href="#" class="btn-nav">BOOK NOW</a>
+        </div>
+    </div>
+</div>
+
+<!-- HERO -->
 <section class="hero">
-    <div class="container">
-        <h1>Reveal Your Best Self</h1>
-        <p>Luxury Botox & Filler Treatments for Natural Beauty</p>
-        <a href="#contact" class="btn">Book Appointment</a>
+    <div class="container hero-content">
+        <small>WELCOME TO QUARTZ BEAUTY</small>
+        <h1>Beauty and confidence in one place</h1>
+        <p>Luxury aesthetic treatments tailored for your natural beauty</p>
+        <a href="#" class="btn">BOOK NOW</a>
     </div>
 </section>
 
-<!-- =====================
-     ABOUT SECTION
-===================== -->
+<!-- ABOUT -->
 <section class="about">
-    <div class="container">
-        <h2>About Our Clinic</h2>
-        <p>
-            We provide premium aesthetic treatments designed to enhance your natural beauty.
-            Our clinic combines medical expertise with a luxurious experience to deliver
-            subtle, elegant, and confidence-boosting results.
-        </p>
+    <div class="container about-wrapper">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1594824388853-2f63f6c8e70b">
+            <div class="decor"></div>
+        </div>
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+                We deliver luxury treatments in a calm, aesthetic environment.
+                Our focus is enhancing your natural beauty using modern techniques.
+            </p>
+        </div>
     </div>
 </section>
 
-<!-- =====================
-     SERVICES SECTION
-===================== -->
+<!-- SERVICES -->
 <section class="services">
     <div class="container">
-        <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
+        <h2>Our Services</h2>
 
         <div class="service-grid">
-            <div class="card">Botox</div>
-            <div class="card">Lip Filler</div>
-            <div class="card">Cheek Filler</div>
-            <div class="card">Skin Boosters</div>
+            <div class="service">
+                <img src="https://images.unsplash.com/photo-1580281658629-7c6f9f0c58b5">
+                <h3>Facial</h3>
+                <span>Aesthetic</span>
+            </div>
+
+            <div class="service">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+                <h3>Botox</h3>
+                <span>Aesthetic</span>
+            </div>
+
+            <div class="service">
+                <img src="https://images.unsplash.com/photo-1603575448360-153f093fd0c6">
+                <h3>Dermal Fillers</h3>
+                <span>Aesthetic</span>
+            </div>
+
+            <div class="service">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+                <h3>Skincare</h3>
+                <span>Aesthetic</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- =====================
-     WHY CHOOSE US
-===================== -->
-<section class="why">
+<!-- TEAM -->
+<section class="team">
     <div class="container">
-        <h2 style="text-align:center; margin-bottom:30px;">Why Choose Us</h2>
+        <h2>Our Team</h2>
 
-        <div class="why-grid">
-            <div class="why-item">✔ Certified Doctors</div>
-            <div class="why-item">✔ Natural Results</div>
-            <div class="why-item">✔ Luxury Experience</div>
+        <div class="team-grid">
+            <div class="member">
+                <img src="https://images.unsplash.com/photo-1619895862022-09114b41f16f">
+                <h4>Dr. Anna Rose</h4>
+                <p>Aesthetic Specialist</p>
+            </div>
+
+            <div class="member">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2">
+                <h4>Dr. Emma Stone</h4>
+                <p>Dermatologist</p>
+            </div>
+
+            <div class="member">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+                <h4>Dr. Mia Clark</h4>
+                <p>Cosmetologist</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- =====================
-     BEFORE & AFTER
-===================== -->
-<section class="before-after">
+<!-- CONTACT -->
+<section class="contact">
     <div class="container">
-        <h2>Before & After</h2>
-        <p>See the transformation our clients love</p>
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Before After">
-    </div>
-</section>
-
-<!-- =====================
-     CONTACT SECTION
-===================== -->
-<section class="contact" id="contact">
-    <div class="container">
-        <h2 style="text-align:center;">Book Your Appointment</h2>
-
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="4" placeholder="Your Message"></textarea>
-            <button type="submit">Submit</button>
-        </form>
+        <h2>Contact</h2>
+        <p>Email: info@quartzclinic.com</p>
+        <p>Phone: +374 00 000 000</p>
+        <p>Instagram: @quartzclinic</p>
     </div>
 </section>
 
